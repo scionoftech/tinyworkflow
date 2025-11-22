@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tinyworkflow"
+version = "0.1.0"
+description = "Lightweight workflow library for learning and experimentation - Not for production use"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    {name = "Sai Kumar Yava", email = "saikumar.geek@gmail.com"}
+]
+keywords = ["workflow", "orchestration", "learning", "async", "ai", "prototyping", "experimentation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "sqlalchemy>=2.0.0",
+    "aiosqlite>=0.19.0",
+    "asyncpg>=0.29.0",
+    "asyncmy>=0.2.9",
+    "apscheduler>=3.10.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "click>=8.1.0",
+    "pydantic>=2.0.0",
+    "python-dateutil>=2.8.0",
+    "jinja2>=3.1.0",
+    "tabulate>=0.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+postgres = [
+    "asyncpg>=0.29.0",
+]
+mysql = [
+    "asyncmy>=0.2.9",
+]
+all-databases = [
+    "asyncpg>=0.29.0",
+    "asyncmy>=0.2.9",
+]
+
+[project.scripts]
+tinyworkflow = "tinyworkflow.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/scionoftech/tinyworkflow"
+Repository = "https://github.com/scionoftech/tinyworkflow"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
