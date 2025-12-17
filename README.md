@@ -1,4 +1,4 @@
-# ⚡ TinyWorkflow
+![Tinyworkflow](https://github.com/scionoftech/tinyworkflow/blob/main/tinyworkflow.png?width=200&height=150)
 
 [![PyPI version](https://badge.fury.io/py/tinyworkflow.svg)](https://pypi.org/project/tinyworkflow/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
